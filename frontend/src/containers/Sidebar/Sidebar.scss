@@ -1,0 +1,35 @@
+.sidebar {
+  margin: 0;
+  width: 229px;
+  height: 850px;
+
+  background: radial-gradient(389.25% 144.28% at 28.53% 0%, #000000 0%, #1C2734 100%);
+}
+
+.logo {
+  margin: 20px 55px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  .sidebar-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    li{
+      margin: 0 0 13px 25px;
+    }
+    a{
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 14px;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
