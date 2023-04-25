@@ -1,5 +1,6 @@
 import React from 'react';
-import './Header.scss'
+import IconSVG from '../../images/gear.svg';
+import './Header.scss';
 
 const Header = () => {
 	return (
@@ -12,10 +13,10 @@ const Header = () => {
 						<li><a href="#">Товар списания</a></li>
 						<li><a href="#">Доп. расходы</a></li>
 					</ul>
+					<button className='gear-btn'>
+						<img src={IconSVG} alt='gear' />
+					</button>
 				</nav>
-				<div className='btn-group'>
-					<button className='btn'>Добавить строку</button>
-				</div>
 			</header>
 		</div>
 	);

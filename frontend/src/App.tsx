@@ -2,6 +2,8 @@ import React from 'react';
 import Sidebar from './containers/Sidebar/Sidebar';
 import Header from './containers/Header/Header';
 import './App.scss'
+import './App.normalize.sass'
+import Table from './containers/Table/Table';
 
 function App() {
   return (
@@ -11,6 +13,7 @@ function App() {
       </div>
       <div className='header-div'>
         <Header/>
+        <Table/>
       </div>
     </div>
   );
