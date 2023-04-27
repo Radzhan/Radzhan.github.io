@@ -6,7 +6,7 @@ const Header = () => {
 	return (
 		<div className='container'>
 			<header className='header'>
-				<h1>Проведение ТО и мелкий ремонт</h1>
+				<h1 className='main-text'>Проведение ТО и мелкий ремонт</h1>
 				<nav className="nav">
 					<ul className="nav-list">
 						<li><a href="#">Общее</a></li>

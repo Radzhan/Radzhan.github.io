@@ -1,28 +1,52 @@
-table{
+@import '../../var/_mixins';
+
+.table {
+  display: flex;
+  flex-direction: column;
   text-align: left;
-  width: 100%;
   background: #FFFFFF;
   border: 1px solid #EEEFF1;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
   border-radius: 10px;
   margin-top: 25px;
   padding: 32px 9px 45px;
-  thead{
-    tr{
-      th{
+
+  table {
+    width: 100%;
+  }
+
+  thead {
+    tr {
+      th {
         padding: 14px 0 14px 9px;
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
         line-height: 16px;
         border: 1px solid #EEEFF1;
+        @include lg{
+          display:flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+        }
       }
     }
   }
-  tbody{
-    tr{
-      td{
-        padding: 5px 9px;
+
+  tbody {
+    tr {
+      @include lg{
+        display:flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+      td {
+        padding-left: 5px;
+        padding-right: 5px;
+        @include lg{
+          width: 100%;
+
+        }
       }
     }
   }
@@ -41,6 +65,7 @@ table{
 .name-td {
   position: relative;
 }
+
 .arrow-btn {
   background: #F6F5F3;
   mix-blend-mode: normal;
@@ -53,13 +78,14 @@ table{
   bottom: 0;
 }
 
-.btn-group{
+.btn-group {
   box-sizing: border-box;
   background: #FFFFFF;
   border: 1px solid #EEEFF1;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
   border-radius: 10px;
-  button {
+
+  .btn {
     width: 146px;
     height: 35px;
     border-radius: 5px;
@@ -74,5 +100,30 @@ table{
     font-size: 14px;
     line-height: 14px;
     color: #FFFFFF;
+
+    &:active {
+      box-shadow: 1px 2px 2px #000000;
+    }
+  }
+}
+
+.all-results {
+  margin-top: 15px;
+  background: #FBFCFD;
+  border: 1px solid #EEEFF1;
+  border-radius: 5px;
+  margin-left: auto;
+
+  p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    color: #8F8F8F;
+    margin: 15px;
+  }
+
+  span {
+    margin-left: 150px;
   }
 }
