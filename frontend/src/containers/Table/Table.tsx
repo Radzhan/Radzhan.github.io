@@ -28,13 +28,7 @@ const Table = () => {
 		amount: '',
 		result: '',
 	});
-	const [selectedName, setSelectedName] = useState<InputBtnI>({
-		displayName: '',
-		price: '',
-		name: '',
-		amount: '',
-		result: '',
-	});
+
 	const addInputRd = async () => {
 		setState(prev => [...prev, {
 			name: 'Мраморный щебень фр. 2-5 мм, 25кг ',
@@ -55,7 +49,7 @@ const Table = () => {
 	};
 
 	const allInputChangeHandler = (index: number, changeIndex: number) => {
-		let array = [...state]
+		let array = [...state];
 		array[index] = namesArray[changeIndex];
 		return setState(array);
 	};
@@ -117,7 +111,7 @@ const Table = () => {
 			const match = string.match(regex);
 
 			if (match) {
-				console.log(state[i].amount)
+				console.log(state[i].amount);
 				const weight = match[0];
 				Result += Number(state[i].price) * Number(state[i].amount);
 				weightResult += Number(state[i].amount) * Number(weight);
@@ -145,7 +139,7 @@ const Table = () => {
 			                                                                            src={Lines}
 			                                                                            alt="3Lines"/>{index + 1}</td>
 			{isExpanded ? <>
-				<PopupState variant="popover" popupId="demo-popup-popover">
+				<PopupState variant="popover" popupId="demo-popup-popover"}>
 					{(popupState) => (
 						<td className="dotes">
 							<Button className="dotes-btn" {...bindTrigger(popupState)} style={{padding: '0', width: '0px'}}></Button>
@@ -171,7 +165,7 @@ const Table = () => {
 						className="input-border name-td select-name"
 						sx={{width: '100%'}}
 						select
-						label='Мраморный щебень фр. 2-5 мм, 25кг'
+						label="Мраморный щебень фр. 2-5 мм, 25кг"
 						onChange={(e) => allInputChangeHandler(index, Number(e.target.value))}
 						required
 					>
@@ -219,7 +213,7 @@ const Table = () => {
 				<button className="btn" onClick={checkUser}>Добавить строку</button>
 			</div>
 			<div className="table">
-				<span className='gear-btn' ></span>
+				<span className="gear-btn"></span>
 				<table>
 					<thead>
 					<tr>
