@@ -24,7 +24,6 @@ const Sidebar = () => {
 	const closeSidebar = () => {
 		sidebar?.classList.add('close');
 		sidebar?.classList.remove('open');
-		console.log(1);
 	};
 
 	useEffect(() => {

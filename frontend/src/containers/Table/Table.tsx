@@ -29,6 +29,10 @@ const Table = () => {
 		result: '',
 	});
 
+	useEffect(() => {
+		dispatch(getNames());
+	}, [dispatch]);
+
 	const addInputRd = async () => {
 		setState(prev => [...prev, {
 			name: 'Мраморный щебень фр. 2-5 мм, 25кг ',
@@ -52,6 +56,14 @@ const Table = () => {
 		let array = [...state];
 		array[index] = namesArray[changeIndex];
 		return setState(array);
+	};
+
+	const checkUser = () => {
+		if (user) {
+			return addInputRd();
+		} else {
+			navigate('/register');
+		}
 	};
 
 	const removeInput = (index: number) => {
@@ -82,10 +94,12 @@ const Table = () => {
 	const dragStartHandler = (e: React.DragEvent<HTMLTableRowElement>, element: InputBtnI) => {
 		setCurrentInput(element);
 	};
+
 	const dragEndHandler = (e: React.DragEvent<HTMLTableRowElement>) => {
 		const target = e.target as HTMLElement;
 		target.style.boxShadow = 'none';
 	};
+
 	const dragDropHandler = (e: React.DragEvent<HTMLTableRowElement>, index: number) => {
 		e.preventDefault();
 		e.stopPropagation();
@@ -122,10 +136,6 @@ const Table = () => {
 		array.push(weightResult, Result, amountResult);
 		return array;
 	};
-
-	useEffect(() => {
-		dispatch(getNames());
-	}, [dispatch]);
 
 	const createTd = state.map((element, index) => {
 		return <tr key={index}
@@ -198,14 +208,6 @@ const Table = () => {
 			</> : null}
 		</tr>;
 	});
-	const checkUser = () => {
-		if (user) {
-			return addInputRd();
-		} else {
-			navigate('/register');
-		}
-	};
-
 
 	return (
 		<div className="container">
