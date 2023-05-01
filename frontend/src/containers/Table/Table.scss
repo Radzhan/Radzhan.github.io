@@ -5,17 +5,28 @@
   flex-direction: column;
   text-align: left;
   background: #FFFFFF;
-  border: 1px solid #EEEFF1;
+  border: 1px solid #F2F2F2;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
   border-radius: 10px;
   margin-top: 25px;
   padding: 32px 9px 45px;
+  @include lg {
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    border: none;
+    margin-top: 30px;
+  }
 
   table {
     width: 100%;
   }
 
   thead {
+    @include lg {
+      display: none;
+    }
+
     tr {
       th {
         padding: 14px 0 14px 9px;
@@ -24,29 +35,28 @@
         font-size: 16px;
         line-height: 16px;
         border: 1px solid #EEEFF1;
-        @include lg{
-          display:flex;
-          flex-direction: column;
-          flex-wrap: wrap;
-        }
       }
     }
   }
 
   tbody {
     tr {
-      @include lg{
-        display:flex;
+      @include lg {
+        display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+        background: #FFFFFF;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+        border-radius: 10px;
+        padding: 15px 15px 25px;
+        width: 100%;
+        margin-bottom: 5px;
       }
+
       td {
         padding-left: 5px;
         padding-right: 5px;
-        @include lg{
-          width: 100%;
 
-        }
       }
     }
   }
@@ -60,6 +70,10 @@
   line-height: 16px;
   border: 1px solid #CCCCCC;
   border-radius: 5px;
+}
+
+.select-name{
+  padding: 0 ;
 }
 
 .name-td {
@@ -101,18 +115,36 @@
     line-height: 14px;
     color: #FFFFFF;
 
+    &::before {
+      content: "";
+      display: block;
+      width: 11px;
+      height: 11px;
+      border-radius: 6px;
+      margin: 0 0 -11px 0;
+      background: url(../../images/plus.png) no-repeat, #2F8CFF;
+    }
+
     &:active {
       box-shadow: 1px 2px 2px #000000;
     }
   }
 }
 
-.all-results {
+.results-block {
   margin-top: 15px;
-  background: #FBFCFD;
+
+  margin-left: auto;
+  @include lg {
+    margin-left: 0;
+  }
+
+}
+
+.all-results {
   border: 1px solid #EEEFF1;
   border-radius: 5px;
-  margin-left: auto;
+  background: #FBFCFD;
 
   p {
     font-style: normal;
@@ -127,3 +159,110 @@
     margin-left: 150px;
   }
 }
+
+.result-block {
+  margin-top: 5px;
+  border-radius: 5px;
+  background: #FBFCFD;
+
+  p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    color: #000000;
+  }
+}
+
+.dotes {
+  width: 45px;
+  margin: 10px 0 0 -15px;
+
+  .dotes-btn {
+    background: url(../../images/3dots.svg) no-repeat center;
+    width: 5px;
+    height: 11px;
+    @include lg {
+      margin: 10px 0 10px -15px;
+    }
+  }
+
+}
+
+@include lg {
+  .result::before,
+  .name::before,
+  .displayName::before,
+  .dotes::before,
+  .amount::before,
+  .price::before, {
+    display: block;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 10px;
+    color: #8F8F8F;
+    white-space: nowrap;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+}
+
+@include lg {
+  .name::before {
+    content: "Наименование единицы";
+  }
+}
+
+@include lg {
+  .result::before {
+    content: "Итого";
+  }
+}
+
+@include lg {
+  .displayName::before {
+    content: "Название товара";
+  }
+}
+
+@include lg {
+  .dotes::before {
+    content: "Действия";
+    margin-left: 15px;
+  }
+}
+
+@include lg {
+  .lines::before {
+    content: "Номер строк";
+    display: block;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 10px;
+    color: #8F8F8F;
+    white-space: nowrap;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+}
+
+@include lg {
+  .amount::before {
+    content: "Кол-во";
+  }
+
+}
+
+@include lg {
+  .price::before {
+    content: "Цены";
+  }
+}
+
+
+
+
+
+

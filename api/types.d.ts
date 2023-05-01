@@ -6,6 +6,7 @@ export interface IUser {
 	displayName: string;
 	googleId?: string;
 	avatar: string;
+	phone: string;
 }
 
 export interface Ingredient {

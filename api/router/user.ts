@@ -9,7 +9,7 @@ import User from '../model/User';
 const client = new OAuth2Client(config.google.clientId);
 const userRouter = express.Router();
 
-userRouter.post("/",  imagesUpload.single("image"), async (req, res, next) => {
+userRouter.post("/",  imagesUpload.single("avatar"), async (req, res, next) => {
 	try {
 		const user = new User({
 			username: req.body.username,
@@ -17,7 +17,6 @@ userRouter.post("/",  imagesUpload.single("image"), async (req, res, next) => {
 			displayName: req.body.displayName,
 			avatar: req.file ? req.file.filename : null,
 		});
-
 
 		user.generateToken();
 		await user.save();
