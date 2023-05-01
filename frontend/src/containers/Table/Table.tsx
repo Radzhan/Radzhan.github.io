@@ -139,7 +139,7 @@ const Table = () => {
 			                                                                            src={Lines}
 			                                                                            alt="3Lines"/>{index + 1}</td>
 			{isExpanded ? <>
-				<PopupState variant="popover" popupId="demo-popup-popover"}>
+				<PopupState variant="popover" popupId="demo-popup-popover">
 					{(popupState) => (
 						<td className="dotes">
 							<Button className="dotes-btn" {...bindTrigger(popupState)} style={{padding: '0', width: '0px'}}></Button>
